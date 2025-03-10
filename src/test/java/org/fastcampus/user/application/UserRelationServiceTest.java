@@ -1,5 +1,6 @@
 package org.fastcampus.user.application;
 
+import org.fastcampus.fake.FakeObjectFactory;
 import org.fastcampus.user.application.dto.CreateUserRequestDto;
 import org.fastcampus.user.application.dto.FollowUSerRequestDto;
 import org.fastcampus.user.application.interfases.UserRelationRepository;
@@ -14,10 +15,8 @@ import org.junit.jupiter.api.Test;
 public class UserRelationServiceTest {
 
 
-    private final UserRepository userRepository = new FakeUSerRepository();
-    private final UserService userService = new UserService(userRepository);
-    private final UserRelationRepository userRelationRepository = new FakeUSerRelationRepository();
-    private final UserRelationService userRelationService = new UserRelationService(userService, userRelationRepository);
+    private final UserService userService = FakeObjectFactory.getUserService();
+    private final UserRelationService userRelationService = FakeObjectFactory.getUserRelationService();
 
     private User user1;
     private User user2;

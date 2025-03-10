@@ -52,12 +52,10 @@ public class PostTest {
     void givenPostCreated_whenUpdateContent_thenContentShouldBeUpdated() {
         //given
         String newPostContent = "new content";
-        System.out.println(post.getContent().getContentText());
         //when
         post.updatePost(user, newPostContent, PostPublication.PUBLIC);
-        System.out.println(post.getContent().getContentText());
         //then
-        Assertions.assertEquals(newPostContent,post.getContent().getContentText());
+        Assertions.assertEquals(newPostContent,post.getContent());
     }
 
 
